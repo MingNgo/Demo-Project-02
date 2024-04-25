@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #ffb900;
+    --line-clamp: 0;
+}
+
 html {
     font-family: "Poppins", sans-serif;
     font-size: 62.5%;
@@ -17,6 +22,7 @@ body {
 .content {
     width: 1170px;
     margin: 0 auto;
+    max-width: calc(100% - 48px);
 }
 
 a {
@@ -95,6 +101,10 @@ a {
     line-height: 2.8rem;
 }
 
+.header .action .btn:hover {
+    opacity: 0.9;
+}
+
 /* Hero */
 .hero {
     background: #fffcf4;
@@ -115,6 +125,7 @@ a {
     height: 685px;
     border-radius: 20px;
     object-fit: cover;
+    display: block;
 }
 
 .hero .media-block .course {
@@ -140,7 +151,11 @@ a {
 }
 
 .hero .course .item .icon {
-    padding: 12px;
+    width: 4.8rem;
+    height: 4.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
     margin-right: 16px;
     background-color: #fff9e8;
@@ -172,7 +187,8 @@ a {
 /* Hero Info */
 .hero .info-block {
     margin-left: auto;
-    width: 40%;
+    padding: 64px 0 0 130px;
+    width: 52%;
 }
 
 .hero .info-block .heading {
@@ -202,23 +218,33 @@ a {
     line-height: 1.66;
     display: inline-block;
     color: #fff;
+    text-align: center;
     font-size: 1.8rem;
     font-weight: 600;
-    padding: 17px 34px;
+    min-width: 180px;
+    padding: 17px 0;
     border-radius: 999px;
-    background: #ffb900;
+    background: var(--primary-color);
+}
+
+.hero .info-block .action .btn:hover {
+    opacity: 0.9;
 }
 
 .hero .action .play-video {
     margin-right: 14px;
     margin-left: 28px;
-    border-radius: 50%;
-    background-color: #fff;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.hero .action .play-video img {
-    padding: 14px;
+.hero .action .play-video .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 50%;
 }
 
 .hero .action .watch-video {
@@ -253,4 +279,150 @@ a {
     font-size: 1.8rem;
     font-weight: 400;
     line-height: 1.66; /* 166.667% */
+}
+
+/* popular */
+.popular {
+    margin-top: 150px;
+}
+
+.popular .body {
+    padding: 50px 0;
+}
+
+.popular .row {
+    display: flex;
+    align-items: center;
+}
+
+.popular .info {
+    width: 39%;
+}
+
+.popular .info .title {
+    color: #171100;
+    font-family: Sen, sans-serif;
+    font-size: 3.8rem;
+    font-weight: 700;
+    line-height: 1.26; /* 126.316% */
+    letter-spacing: -0.076rem;
+}
+
+.popular .info .desc {
+    margin-top: 16px;
+    color: #5f5b53;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.66; /* 166.667% */
+}
+
+.popular .directional {
+    gap: 18px;
+    display: flex;
+    margin-left: auto;
+}
+
+.popular .directional .control-btn {
+    cursor: pointer;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popular .directional .control-btn:hover {
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+.popular .row-bot {
+    display: flex;
+    gap: 30px;
+    margin-top: 55px;
+}
+
+.popular .course-item {
+    width: calc(100% / 3);
+}
+
+.popular .course-item .thumb {
+    border-radius: 12px 12px 0 0;
+    width: 100%;
+    height: 278px;
+    object-fit: cover;
+}
+
+.popular .info-course {
+    border-radius: 1.2rem;
+    background: #fff;
+    box-shadow: 0px 18px 36px 0px rgba(0, 0, 0, 0.05);
+    padding: 16px 22px 22px;
+}
+
+.popular .info-course .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popular .info-course .rating {
+    gap: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.popular .head .title {
+    word-wrap: break-word;
+    color: #171100;
+    font-weight: 600;
+    line-height: 1.66;
+}
+
+.popular .rating .value {
+    color: #fea31b;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.popular .info-course .desc {
+    word-wrap: break-word;
+    color: #5f5b53;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.85;
+}
+
+.popular .info-course .foot {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popular .foot .price {
+    color: #171100;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.btn-item-popular {
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-radius: 999px;
+    min-width: 118px;
+    height: 50px;
+    background: #171100;
+}
+
+.btn-item-popular:hover {
+    background: var(--primary-color);
 }
