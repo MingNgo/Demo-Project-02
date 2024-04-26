@@ -35,9 +35,17 @@ a {
 
 .line-clamp {
     display: -webkit-box;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: var(--line-clamp, 1);
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.line-1 {
+    --line-clamp: 1;
+}
+
+.line-clamp.line-2 {
+    --line-clamp: 2;
 }
 
 /* Header*/
@@ -288,8 +296,6 @@ a {
     margin-top: 110px;
 }
 
-
-
 .popular .row {
     display: flex;
     align-items: center;
@@ -347,12 +353,21 @@ a {
 }
 
 .popular .course-item {
-    width: calc(100% / 3);
+    /* width: calc(100% / 3); */
+    border: 1px solid #e2dfda;
+    border-radius: 12px 12px 12px 12px;
+    flex: 1;
+}
+
+.popular .course-item:hover {
+    border: 1px solid transparent;
+    box-shadow: 0px 18px 36px 0px rgba(0, 0, 0, 0.05);
 }
 
 .popular .course-item .thumb {
     border-radius: 12px 12px 0 0;
-    width: 100%;
+    margin: -1px;
+    width: calc(100% + 2px);
     height: 278px;
     object-fit: cover;
 }
@@ -360,7 +375,6 @@ a {
 .popular .info-course {
     border-radius: 1.2rem;
     background: #fff;
-    box-shadow: 0px 18px 36px 0px rgba(0, 0, 0, 0.05);
     padding: 16px 22px 22px;
 }
 
@@ -377,7 +391,11 @@ a {
 }
 
 .popular .head .title {
-    word-wrap: break-word;
+}
+
+.popular .head .title a {
+    word-break: break-word;
+    padding-right: 6px;
     color: #171100;
     font-weight: 600;
     line-height: 1.66;
@@ -386,11 +404,12 @@ a {
 .popular .rating .value {
     color: #fea31b;
     font-size: 1.6rem;
+    line-height: 1.75;
     font-weight: 400;
 }
 
 .popular .info-course .desc {
-    word-wrap: break-word;
+    word-break: break-word;
     color: #5f5b53;
     font-size: 1.4rem;
     font-weight: 400;
@@ -425,4 +444,144 @@ a {
 
 .btn-item-popular:hover {
     background: var(--primary-color);
+}
+
+/* Feedback */
+.feedback {
+    margin-top: 110px;
+    background: #2e2100;
+    padding: 96px 0;
+}
+
+.feedback-list {
+    display: flex;
+    overflow: hidden;
+}
+
+.feedback-item {
+    display: flex;
+    width: 100%;
+    flex-shrink: 0;
+    transform: translateX(-100%);
+    transition: all ease 0.5s;
+}
+
+.feedback .feedback-item .avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.feedback-item .title {
+    margin-top: 18px;
+    color: #f7f7f7;
+    font-family: Sen;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.41;
+}
+
+.feedback-item .desc {
+    margin-top: 4px;
+    color: #bfbcb2;
+    font-size: 1.4rem;
+    line-height: 1.85;
+}
+
+.feedback-item .dots {
+    margin-top: 28px;
+    display: flex;
+}
+
+.feedback-item .dots .dot {
+    cursor: pointer;
+    margin-right: 6px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #634700;
+}
+
+.feedback-item .dots .dot.action {
+    cursor: default;
+    background-color: var(--primary-color);
+}
+
+.feedback-item .content-feedback {
+    width: 66%;
+    margin-left: auto;
+}
+
+blockquote {
+    margin-left: 30px;
+    color: #fff;
+    font-size: 2.6rem;
+    font-style: italic;
+    line-height: 1.53;
+}
+
+/* Features */
+.features {
+    margin-top: 135px;
+    padding: 65px 0;
+}
+
+.features .body {
+    display: flex;
+    align-items: center;
+}
+.features .images {
+    gap: 0 30px;
+    display: flex;
+}
+
+.features .images img {
+    width: 270px;
+    height: 404px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.features .images img:first-child {
+    margin-top: 34px;
+}
+
+.features .features-content {
+    margin-left: auto;
+    width: 41%;
+}
+
+.features-content .title {
+    color: #171100;
+    font-family: Sen;
+    font-size: 3.8rem;
+    font-weight: 700;
+    line-height: 1.26;
+    letter-spacing: -0.076rem;
+}
+
+.features-content .desc {
+    margin-top: 16px;
+    color: #5f5b53;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.75;
+}
+
+.features-content .btn {
+    margin-top: 32px;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 600;
+    min-width: 137px;
+    line-height: 50px;
+    border-radius: 999px;
+    background: #ffb900;
+}
+
+.features-content .btn:hover {
+    opacity: 0.9;
 }
