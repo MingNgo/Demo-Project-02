@@ -585,3 +585,22 @@ blockquote {
 .features-content .btn:hover {
     opacity: 0.9;
 }
+
+/* Features 2 */
+.features-2nd {
+    margin-top: 70px;
+}
+
+.features-2nd .features-content {
+    margin-left: 0px;
+    margin-right: auto;
+    width: 48%;
+}
+
+.features .body .image {
+    width: 440px;
+    height: 470px;
+    object-fit: cover;
+    border-radius: 2rem;
+}
+
